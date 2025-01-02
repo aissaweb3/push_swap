@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events_bonus.h                                     :+:      :+:    :+:   */
+/*   general.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/29 11:09:14 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:09:15 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/01 16:46:01 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/02 16:27:46 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_BONUS_H
-# define EVENTS_BONUS_H
+#include "../push_swap.h"
 
-# define SCROLL_UP 4
-# define SCROLL_DOWN 5
+void	general_swap(t_mystack *stack)
+{
+	t_mystack	*elm1;
+	t_mystack	*elm2;
+	t_mystack	*tmp;
 
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
-# define KEY_UP 126
-# define KEY_DOWN 125
-# define ESC_KEY 53
-
-# define PLUS_KEY 24
-# define MINUS_KEY 27
-
-# define LEFT_SHIFT 257
-# define DESTROY_NOTIFY 17
-# define ON_MOUSEMOVE 6
-
-#endif
+	elm1 = stack;
+	if (stack == NULL)
+		return ;
+	elm2 = stack->next;
+	if (stack->next == NULL)
+		return ;
+	tmp = elm2->next;
+	elm2->next = elm1;
+	elm1->next = tmp;
+}

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_img_bonus.c                                   :+:      :+:    :+:   */
+/*   language.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/29 11:09:19 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:09:20 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/02 16:30:28 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol_bonus.h"
+# ifndef LANGUAGE_H
+#  define LANGUAGE_H
 
-void	fill_img(t_fractal *fractal)
-{
-	int	x;
-	int	y;
+#include "../push_swap.h"
 
-	x = -1;
-	while (++x < WIDTH)
-	{
-		y = -1;
-		while (++y < HEIGHT)
-			my_mlx_pixel_put(&fractal->img, x, y,
-				calc_pixel_color(x, y, fractal));
-	}
-	mlx_put_image_to_window(fractal->mlx_connection,
-		fractal->mlx_window, fractal->img.img_ptr, 0, 0);
-}
+
+# endif

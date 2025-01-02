@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/29 10:13:36 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:18:39 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/02 16:28:42 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/02 16:31:27 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-# define EVENTS_H
+#include "../language.h"
 
-# define SCROLL_UP 4
-# define SCROLL_DOWN 5
-
-# define ESC_KEY 53
-# define DESTROY_NOTIFY 17
-
-#endif
+void	ss(t_mystack *a, t_mystack *b)
+{
+	sa(a);
+	sb(b);
+	write(1, "ss\n", 3);
+}
