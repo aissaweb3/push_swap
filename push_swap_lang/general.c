@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   general.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/02 16:33:36 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/01 16:46:01 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/02 16:27:46 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
-#  define PUSH_SWAP_H
+#include "../push_swap.h"
 
-#include <stdlib.h>
-#include "push_swap_lang/language.h"
+void	general_swap(t_mystack *stack)
+{
+	t_mystack	*elm1;
+	t_mystack	*elm2;
+	t_mystack	*tmp;
 
-// doubely linked list
-// cus the stack must be SCALABLE then we dont swap the data but the actual node 
-
-void			general_swap(t_mystack *stack);
-# endif
+	elm1 = stack;
+	if (stack == NULL)
+		return ;
+	elm2 = stack->next;
+	if (stack->next == NULL)
+		return ;
+	tmp = elm2->next;
+	elm2->next = elm1;
+	elm1->next = tmp;
+}
