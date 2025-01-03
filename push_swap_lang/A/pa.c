@@ -6,14 +6,19 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:55:13 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:57:35 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:39:20 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	pa(t_mystack **a, t_mystack **b)
+void	pa(t_mystack **s[2])
 {
-	general_push(b, a); // b to a
+	t_mystack **a;
+	t_mystack **b;
+
+	a = s[0];
+	b = s[1];
+	general_push(b, a);
 	write(1, "pa\n", 3);
 }

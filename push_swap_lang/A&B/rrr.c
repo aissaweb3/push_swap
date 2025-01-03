@@ -6,15 +6,15 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:23:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:58:33 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:45:32 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	rrr(t_mystack **a, t_mystack **b)
+void	rrr(t_mystack **s[2])
 {
-	rra_(a);
-	rrb_(a);
+	rra_(s);
+	rrb_(s);
 	write(1, "rrr\n", 3);
 }

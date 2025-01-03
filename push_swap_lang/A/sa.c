@@ -6,19 +6,22 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 16:20:55 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:58:21 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:45:02 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sa(t_mystack **a)
+void	sa(t_mystack **s[2])
 {
-	sa_(a);
+	sa_(s);
 	write(1, "sa\n", 3);
 }
 
-void	sa_(t_mystack **a)
+void	sa_(t_mystack **s[2])
 {
+	t_mystack **a;
+
+	a = s[0];
 	general_swap(a);
 }

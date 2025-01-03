@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:33:16 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 13:45:47 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:57:21 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,35 +46,42 @@ int main(int argc, char const *argv[])
 	t_mystack *a;
 	t_mystack *b;
 	t_mystack *tail;
+	
+	t_mystack ***s;
 
 	while (i < argc)
 	{
 		tail = append_stack(&a, tail, atoi(argv[i++]));
 	}
 	
+	s = malloc(2 * sizeof(void *));
+	
 	print_stack(a);
 	print_stack(b);
 	
 	// ra pb*3 (ra+pa)*2 ra*2 pa ra 
 	
-	ra(&a);
-	pb(&b, &a);
-	pb(&b, &a);
-	pb(&b, &a);
+	s[0] = &a;
+	s[1] = &b;
+	
+	ra(s);
+	pb(s);
+	pb(s);
+	pb(s);
 	
 	
-	ra(&a);
-	pa(&b, &a);
-	ra(&a);
-	pa(&b, &a);
+	ra(s);
+	pa(s);
+	ra(s);
+	pa(s);
 	
 	
-	ra(&a);
-	ra(&a);
+	ra(s);
+	ra(s);
 	
 	
-	pa(&b, &a);
-	ra(&a);
+	pa(s);
+	ra(s);
 	
 	
 	print_stack(a);

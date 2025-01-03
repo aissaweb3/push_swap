@@ -6,30 +6,36 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:57:40 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 12:53:09 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:44:25 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ra(t_mystack **a)
+void	ra(t_mystack **s[2])
 {
-	ra_(a);
+	ra_(s);
 	write(1, "ra\n", 3);
 }
 
-void	ra_(t_mystack **a)
+void	ra_(t_mystack **s[2])
 {
+	t_mystack **a;
+
+	a = s[0];
 	general_rotate(a);
 }
 
-void	rra(t_mystack **a)
+void	rra(t_mystack **s[2])
 {
-	rra_(a);
+	rra_(s);
 }
 
-void	rra_(t_mystack **a)
+void	rra_(t_mystack **s[2])
 {
+	t_mystack **a;
+
+	a = s[0];
 	general_rev_rotate(a);
 	write(1, "rra\n", 4);
 }
