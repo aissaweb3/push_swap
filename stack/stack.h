@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/02 16:34:34 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:02:01 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ typedef struct	s_mystack
 
 t_mystack		*create_stack(int data);
 t_mystack		*append_stack(t_mystack **head, t_mystack *tail, int new_data);
+t_mystack		*ft_lstlast(t_mystack *head);
 
 # endif

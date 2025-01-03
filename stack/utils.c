@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/02 16:35:27 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:03:24 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ t_mystack	*append_stack(t_mystack **head, t_mystack *tail, int new_data)
 		return (*head = create_stack(new_data));
 	tail->next = create_stack(new_data);
 	return (tail->next);
+}
+
+t_mystack		*ft_lstlast(t_mystack *head)
+{
+	while (head && head->next)
+		head = head->next;
+	return (head);
 }
