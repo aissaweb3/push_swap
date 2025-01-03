@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:53:50 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:19:18 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct	s_mystack
 {
 	int					data;
 	int					index;
+	unsigned int		lst_size;
 	struct s_mystack	*next;
 }				t_mystack;
 

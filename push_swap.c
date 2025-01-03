@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:33:16 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:57:21 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:05:57 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,74 @@
 #include <string.h>
 #include <stdio.h>
 
+
+// int main(int argc, char const *argv[])
+// {
+	
+
+// 	int i = 1;
+// 	t_mystack *a;
+// 	t_mystack *b;
+// 	t_mystack *tail;
+	
+// 	t_mystack ***s;
+
+// 	while (i < argc)
+// 	{
+// 		tail = append_stack(&a, tail, atoi(argv[i++]));
+// 	}
+	
+// 	s = malloc(2 * sizeof(void *));
+	
+// 	print_stack(a);
+// 	print_stack(b);
+	
+// 	// ra pb*3 (ra+pa)*2 ra*2 pa ra 
+	
+// 	s[0] = &a;
+// 	s[1] = &b;
+	
+// 	ra(s);
+// 	pb(s);
+// 	pb(s);
+// 	pb(s);
+	
+	
+// 	ra(s);
+// 	pa(s);
+// 	ra(s);
+// 	pa(s);
+	
+	
+// 	ra(s);
+// 	ra(s);
+	
+	
+// 	pa(s);
+// 	ra(s);
+	
+	
+// 	print_stack(a);
+// 	print_stack(b);
+	
+// 	return 0;
+// }
+
+
+
+
+static void	validation_error(void)
+{
+	write(2, "Error\n", 7);
+	exit(EXIT_FAILURE);
+}
+
+static void	malloc_error(void)
+{
+	write(2, "Malloc Error !\n", 16);
+	exit(EXIT_FAILURE);
+}
+
 void	print_stack(t_mystack *head)
 {
 	while (head)
@@ -36,57 +104,42 @@ void	print_stack(t_mystack *head)
 		head = head->next;
 	}
 	printf("__________________\n\n");
+
 }
 
-int main(int argc, char const *argv[])
+void	my_sort(t_mystack **s[2])
 {
+	ra(s);
+	pb(s);
+	pb(s);
+	pb(s);
 	
+	
+	ra(s);
+	pa(s);
+	ra(s);
+	pa(s);
+	
+	
+	ra(s);
+	ra(s);
+	
+	
+	pa(s);
+	ra(s);
+}
 
-	int i = 1;
-	t_mystack *a;
-	t_mystack *b;
-	t_mystack *tail;
-	
-	t_mystack ***s;
+int main(int ac, char **av)
+{
+	t_parsed_data	my_data;
+	t_mystack		**a_b[2]; // both stackes
 
-	while (i < argc)
-	{
-		tail = append_stack(&a, tail, atoi(argv[i++]));
-	}
-	
-	s = malloc(2 * sizeof(void *));
-	
-	print_stack(a);
-	print_stack(b);
-	
-	// ra pb*3 (ra+pa)*2 ra*2 pa ra 
-	
-	s[0] = &a;
-	s[1] = &b;
-	
-	ra(s);
-	pb(s);
-	pb(s);
-	pb(s);
-	
-	
-	ra(s);
-	pa(s);
-	ra(s);
-	pa(s);
-	
-	
-	ra(s);
-	ra(s);
-	
-	
-	pa(s);
-	ra(s);
-	
-	
-	print_stack(a);
-	print_stack(b);
-	
+	my_data = get_my_data(ac, av);
+	if (my_data.validation_error)
+		validation_error();
+	a_b[0] = &my_data.stack_a;
+	a_b[1] = &my_data.stack_b;
+	my_sort(a_b);
 	return 0;
 }
 

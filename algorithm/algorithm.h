@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   algorithm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 19:11:21 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/03 19:15:53 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef ALGORITHM_H
+# define ALGORITHM_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "push_swap_lang/language.h"
-# include "stack/stack.h"
+# include "../push_swap.h"
+#include "../stack/stack.h"
 
-typedef struct	s_parsed_data
-{
-	char		malloc_error;
-	char		validation_error;
-	t_mystack	*stack_a;
-	t_mystack	*stack_b;
-}				t_parsed_data;
+/*
+ALGO :
+	finding the LIS :					iter
+	PUSH none LIS						pb
+	CALC best B element to PUSH			pa
+	FIND the min						ra, rra
+*/
 
-t_parsed_data	get_my_data(int ac, char **av);
+void	find_LIS_and_push(t_parsed_data *my_data, t_mystack **a_b[2]);
 
 #endif

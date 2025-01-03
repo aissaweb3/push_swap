@@ -1,9 +1,0 @@
-
-
-PUSH_SWAP :
-	finding the LIS :					iter
-	PUSH none LIS						pb
-	CALC best B element to PUSH			pa
-	FIND the min						ra, rra
-
-
