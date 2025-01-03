@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   sb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 11:23:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:32:45 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/02 16:20:55 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/03 11:32:32 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_mystack **a, t_mystack **b)
+void	sb(t_mystack **b)
 {
-	sa_(a);
-	sb_(a);
-	write(1, "ss\n", 3);
+	sb_(b);
+	write(1, "sb\n", 3);
+}
+
+void	sb_(t_mystack **b)
+{
+	general_swap(b);
 }
