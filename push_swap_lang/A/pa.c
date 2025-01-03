@@ -6,11 +6,11 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:55:13 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 10:56:50 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:57:35 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 void	pa(t_mystack **a, t_mystack **b)
 {

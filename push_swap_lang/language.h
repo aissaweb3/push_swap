@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:40:16 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:52:55 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LANGUAGE_H
 
 # include "../push_swap.h"
+#include "../stack/stack.h"
 
 void	general_swap(t_mystack **head);
 void	general_push(t_mystack **to, t_mystack **from);

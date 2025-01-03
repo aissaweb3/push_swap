@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:02:01 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:53:50 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #  define STACK_H
 
 #include <stdlib.h>
-#include "push_swap_lang/language.h"
+#include "../push_swap_lang/language.h"
 
 // cus the stack must be SCALABLE then we dont swap the data but the actual node 
 typedef struct	s_mystack

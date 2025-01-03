@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:46:01 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:40:28 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/03 13:44:33 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	general_push(t_mystack **to, t_mystack **from)
 	*from = (*from)->next;
 	elem_to_push->next = *to;
 	*to = elem_to_push;
-	write(1, "pa\n", 3);
 }
 
 void	general_rotate(t_mystack **head)
