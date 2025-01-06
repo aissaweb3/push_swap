@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 19:11:21 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:10:09 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include "push_swap_lang/language.h"
 # include "stack/stack.h"
+# include <limits.h>
 
 typedef struct	s_parsed_data
 {
@@ -25,6 +26,8 @@ typedef struct	s_parsed_data
 	t_mystack	*stack_a;
 	t_mystack	*stack_b;
 }				t_parsed_data;
+
+#define NOT_SET -314
 
 t_parsed_data	get_my_data(int ac, char **av);
 

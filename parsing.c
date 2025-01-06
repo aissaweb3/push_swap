@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:02:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 19:00:00 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:09:45 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,35 @@ t_mystack	*init_stack(int ac, char **av)
 	return (head);
 }
 
+void	index_stack_a(t_mystack *a)
+{
+	t_mystack	*curr;
+	t_mystack	*min_node;
+	int			min_value;
+	int			i;
+
+	i = -1;
+	while (1)
+	{
+		curr = a;
+		min_node = NULL;
+		min_value = INT_MAX;
+		while (curr)
+		{
+			if (curr->index == NOT_SET && curr->data < min_value)
+			{
+				min_value = curr->data;
+				min_node = curr;
+			}
+			curr = curr->next;
+		}
+		i++;
+		if (min_node == NULL)
+			break ;
+		min_node->index = i;
+	}
+}
+
 t_parsed_data	get_my_data(int ac, char **av)
 {
 	t_parsed_data	my_data;
@@ -38,6 +67,8 @@ t_parsed_data	get_my_data(int ac, char **av)
 	my_data.validation_error = validate_args(ac, av);
 	// init
 	my_data.stack_a = init_stack(ac, av);
+	
+	index_stack_a(my_data.stack_a);
 	if (my_data.stack_a == NULL)
 		return (my_data.malloc_error = 1, my_data);
 	my_data.stack_b = NULL;

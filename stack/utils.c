@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 11:03:24 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:10:28 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_mystack	*create_stack(int data)
 	new_stack = malloc(sizeof(t_mystack));
 	if (new_stack == NULL)
 		return (NULL);
+	new_stack->index = NOT_SET;
 	new_stack->data = data;
 	return (new_stack);
 }

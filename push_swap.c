@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:33:16 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 19:05:57 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:02:23 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	print_stack(t_mystack *head)
 {
 	while (head)
 	{
-		printf("|\t%d\t|\n", head->data);
+		printf("|\t%d\t%d\t|\n", head->data, head->index);
 		head = head->next;
 	}
 	printf("__________________\n\n");
@@ -139,6 +139,8 @@ int main(int ac, char **av)
 		validation_error();
 	a_b[0] = &my_data.stack_a;
 	a_b[1] = &my_data.stack_b;
+	print_stack(my_data.stack_a);
+	return 0;
 	my_sort(a_b);
 	return 0;
 }
