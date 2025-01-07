@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.h                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 11:51:55 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/06 16:18:10 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALGORITHM_H
-# define ALGORITHM_H
+#include "push_swap.h"
 
-# include "../push_swap.h"
-#include "../stack/stack.h"
+t_mystack	*init_stack(int ac, char **av)
+{
+	int 		i;
+	t_mystack	*head;
+	t_mystack	*tail;
 
-#define INVALID_IDX -1
+	i = 1; // ignore the program name
+	head = NULL;
+	while (i < ac)
+	{
+		tail = append_stack(&head, tail, atoi(av[i++]));
+		if (tail == NULL)
+			return (free_stack(&head), NULL);
+	}
+	return (head);
+}
 
-/*
-ALGO :
-	finding the LIS :					iter
-	PUSH none LIS						pb
-	CALC best B element to PUSH			pa
-	FIND the min						ra, rra
-*/
-
-void	find_LIS_and_push(t_parsed_data *my_data, t_mystack **a_b[2]);
-
-#endif

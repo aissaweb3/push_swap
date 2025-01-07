@@ -6,30 +6,11 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:02:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/06 14:09:45 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/07 10:15:54 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-char	validate_args(int ac, char **av)
-{
-	// validate input data
-	return (0);
-}
-
-t_mystack	*init_stack(int ac, char **av)
-{
-	int 		i;
-	t_mystack	*head;
-	t_mystack	*tail;
-
-	i = 1; // ignore the program name
-	head = NULL;
-	while (i < ac)
-		tail = append_stack(&head, tail, atoi(av[i++]));
-	return (head);
-}
 
 void	index_stack_a(t_mystack *a)
 {
@@ -62,16 +43,24 @@ void	index_stack_a(t_mystack *a)
 
 t_parsed_data	get_my_data(int ac, char **av)
 {
-	t_parsed_data	my_data;
+	t_parsed_data	d;
 
-	my_data.validation_error = validate_args(ac, av);
+	d.argc = ac - 1;
+	d.validation_error = validate_args(ac, av);
+	if (d.validation_error == ERR)
+		return (d.malloc_error = 1, d);
 	// init
-	my_data.stack_a = init_stack(ac, av);
+	d.stack_a = init_stack(ac, av);
+	if (d.stack_a == NULL)
+		return (d.malloc_error = 1, d);
+	index_stack_a(d.stack_a);
+	set_positions(d.stack_a);
+	// init LIS
+	d.LIS = malloc(d.argc * sizeof(int));
+	if (d.LIS == NULL)
+		return (free_stack(&d.stack_a), d.malloc_error = 1, d);
+
+	d.stack_b = NULL;
 	
-	index_stack_a(my_data.stack_a);
-	if (my_data.stack_a == NULL)
-		return (my_data.malloc_error = 1, my_data);
-	my_data.stack_b = NULL;
-	
-	return (my_data);
+	return (d);
 }

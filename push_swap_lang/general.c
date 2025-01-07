@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:46:01 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:25:22 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/07 13:29:53 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	general_swap(t_mystack **head)
 
 void	general_push(t_mystack **from, t_mystack **to)
 {
-	t_mystack	*a1;
 	t_mystack	*elem_to_push;
 
 	if (*from == NULL)
