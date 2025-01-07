@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 11:51:55 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:07:23 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "../push_swap.h"
 #include "../stack/stack.h"
 
-#define INVALID_IDX -1
+#define INVALID_IDX -314
 
 /*
 ALGO :
@@ -26,6 +26,9 @@ ALGO :
 	FIND the min						ra, rra
 */
 
+#define ABS_VAL(x) ((x > 0) - 0.5) * 2 * (x)
+
+void	my_algo(t_parsed_data *my_data, t_mystack **a_b[2]);
 void	find_LIS_and_push(t_parsed_data *my_data, t_mystack **a_b[2]);
 
 #endif

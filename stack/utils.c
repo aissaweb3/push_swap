@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 14:49:20 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:41:39 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,12 @@ void	set_positions(t_mystack *a)
 	while (curr)
 	{
 		curr->position = position++;
-		curr->len = position;
 		curr = curr->next;
 	}
 	curr = a;
 	while (curr)
 	{
-		curr->len = position;
+		curr->len = position - 1;
 		curr = curr->next;
 	}
 }

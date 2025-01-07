@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:33:16 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 14:46:49 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:15:59 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	print_stack(t_mystack *head)
 {
 	while (head)
 	{
-		printf("|\t%d\t%d\t(%d,%d)\t|\n", head->data, head->index, head->push_cost_b, head->push_cost_a);
+		printf("|\t%d\t%d\t(%d, %d)\t\t|\n", head->data, head->index, head->push_cost_b, head->push_cost_a);
 		head = head->next;
 	}
 	printf("________________________________\n\n");
@@ -144,13 +144,13 @@ int main(int ac, char **av)
 	
 	
 	
-	print_stack(my_data.stack_a);
+	// print_stack(my_data.stack_a);
 	
 	
-	find_LIS_and_push(&my_data, a_b);
+	my_algo(&my_data, a_b);
 	
-	print_stack(my_data.stack_a);
-	print_stack(my_data.stack_b);
+	// print_stack(my_data.stack_a);
+	// print_stack(my_data.stack_b);
 	
 	
 	return 0;
