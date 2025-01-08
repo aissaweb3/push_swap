@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:36:29 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 11:14:35 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ void	general_rotate(t_mystack **head);
 void	general_rev_rotate(t_mystack **head);
 
 // lang
-void	rr(t_mystack **stack_arr[2]);
-void	rrr(t_mystack **stack_arr[2]);
-void	ss(t_mystack **stack_arr[2]);
-void	pa(t_mystack **stack_arr[2]);
-void	ra(t_mystack **stack_arr[2]);
-void	ra_(t_mystack **stack_arr[2]);
-void	rra(t_mystack **stack_arr[2]);
-void	rra_(t_mystack **stack_arr[2]);
-void	sa(t_mystack **stack_arr[2]);
-void	sa_(t_mystack **stack_arr[2]);
-void	pb(t_mystack **stack_arr[2]);
-void	rb(t_mystack **stack_arr[2]);
-void	rb_(t_mystack **stack_arr[2]);
-void	rrb(t_mystack **stack_arr[2]);
-void	rrb_(t_mystack **stack_arr[2]);
-void	sb(t_mystack **stack_arr[2]);
-void	sb_(t_mystack **stack_arr[2]);
+void	rr(t_mystack **a_b[2]);
+void	rrr(t_mystack **a_b[2]);
+void	ss(t_mystack **a_b[2]);
+void	pa(t_mystack **a_b[2]);
+void	ra(t_mystack **a_b[2]);
+void	ra_(t_mystack **a_b[2]);
+void	rra(t_mystack **a_b[2]);
+void	rra_(t_mystack **a_b[2]);
+void	sa(t_mystack **a_b[2]);
+void	sa_(t_mystack **a_b[2]);
+void	pb(t_mystack **a_b[2]);
+void	rb(t_mystack **a_b[2]);
+void	rb_(t_mystack **a_b[2]);
+void	rrb(t_mystack **a_b[2]);
+void	rrb_(t_mystack **a_b[2]);
+void	sb(t_mystack **a_b[2]);
+void	sb_(t_mystack **a_b[2]);
 
 #endif
