@@ -12,7 +12,7 @@ INC = $(ALGO_DIR)/algorithm.h $(STACK_DIR)/stack.h push_swap.h $(LANG_DIR)/langu
 
 # Source files
 SRC_FILES = \
-	$(ALGO_DIR)/my_algo.c $(ALGO_DIR)/calc_rotate_push.c $(ALGO_DIR)/find_LIS_and_push.c $(ALGO_DIR)/mov_to_top.c \
+	$(ALGO_DIR)/my_algo.c $(ALGO_DIR)/calc_rotate_push.c $(ALGO_DIR)/find_LIS_and_push.c $(ALGO_DIR)/find_LIS.c $(ALGO_DIR)/mov_to_top.c \
 	$(STACK_DIR)/utils.c \
 	$(LANG_DIR)/general.c \
 	$(A_DIR)/pa.c $(A_DIR)/ra-rra.c $(A_DIR)/sa.c \

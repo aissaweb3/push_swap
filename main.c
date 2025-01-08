@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:33:16 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 14:31:25 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:52:56 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,8 +150,8 @@ int main(int ac, char **av)
 	
 	my_algo(&my_data, a_b);
 	
-	// print_stack(my_data.stack_a);
-	// print_stack(my_data.stack_b);
+	print_stack(my_data.stack_a);
+	print_stack(my_data.stack_b);
 	
 	
 	return 0;

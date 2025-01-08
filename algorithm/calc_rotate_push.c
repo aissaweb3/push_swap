@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 13:57:37 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:11:23 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,13 @@ t_mystack	*best_elm_in_b(t_mystack **a_b[2])
 	elm_2_push = b;
 	while (b)
 	{
-		// sum_instructions ---> sum_instr
 		if (sum_instr(b) < sum_instr(elm_2_push))
 			elm_2_push = b;
 		b = b->next;
 	}
 	return (elm_2_push);
 }
-#include <stdio.h> // forbidden
+
 void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 {
 	int 		ca;
@@ -118,7 +117,7 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 		// 		PUSH
 	
 		calc_push_cost_b(a_b); // am proud of the calculation hhhh
-		elm_2_push = b;//best_elm_in_b(a_b);
+		elm_2_push = best_elm_in_b(a_b);
 		ca = elm_2_push->push_cost_a;
 		cb = elm_2_push->push_cost_b;
 		
@@ -144,26 +143,3 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 	}
 }
 
-
-
-
-
-
-		// if (ca * cb > 0)
-		// 	while (max(ABS_VAL(ca), ABS_VAL(cb)) != 0)
-		// 	{
-		// 		(ca > 0 && cb > 0) && (rr(a_b), ca--, cb--);
-		// 		(ca < 0 && cb < 0) && (rrr(a_b), ca++, cb++);
-		// 		(ca > 0 && cb == 0) && (ra(a_b), ca--);
-		// 		(cb > 0 && ca == 0) && (rb(a_b), cb--);
-		// 		(ca < 0 && cb == 0) && (rra(a_b), ca++);
-		// 		(cb < 0 && ca == 0) && (rrb(a_b), cb++);
-		// 	}
-		// else
-		// 	while (ABS_VAL(ca) + ABS_VAL(cb) > 0)
-		// 	{
-		// 		(ca > 0) && (ra(a_b), ca--);
-		// 		(cb > 0) && (rb(a_b), cb--);
-		// 		(ca < 0) && (rra(a_b), ca++);
-		// 		(cb < 0) && (rrb(a_b), cb++);
-		// 	}
