@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:05 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 11:27:11 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:09:53 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	find_LIS(t_parsed_data *my_data, t_mystack **a_b[2], int *LIS, int *LIS_len
 	LIS[i] = a->data;
 	while (curr)
 	{
-		if (curr->index <= max_idx / 1.1 && curr->data > LIS[i])
+		if (curr->index <= max_idx && curr->data > LIS[i])
 		{
 			(*LIS_len)++;
 			if (i > max_idx / 2)

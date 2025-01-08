@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 16:41:39 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:46:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ t_mystack	*create_stack(int data)
 		return (NULL);
 	new_stack->index = NOT_SET;
 	new_stack->data = data;
+	new_stack->len = 0;
+	new_stack->push_cost_a = 0;
+	new_stack->push_cost_a = 0;
 	return (new_stack);
 }
 

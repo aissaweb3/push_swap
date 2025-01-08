@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 11:33:05 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:57:37 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	prev_idx_in_A(int idx, t_mystack *a)
 	int	pos;
 
 	max_smaller_idx = INT_MIN;
+	pos = a->len;
 	while (a)
 	{
 		if (a->index < idx && a->index > max_smaller_idx)
@@ -81,7 +82,6 @@ void	calc_push_cost_b(t_mystack **a_b[2])
 		
 		b = b->next;
 	}
-	
 }
 
 t_mystack	*best_elm_in_b(t_mystack **a_b[2])
@@ -100,7 +100,7 @@ t_mystack	*best_elm_in_b(t_mystack **a_b[2])
 	}
 	return (elm_2_push);
 }
-
+#include <stdio.h> // forbidden
 void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 {
 	int 		ca;
@@ -118,32 +118,52 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 		// 		PUSH
 	
 		calc_push_cost_b(a_b); // am proud of the calculation hhhh
-		elm_2_push = best_elm_in_b(a_b);
+		elm_2_push = b;//best_elm_in_b(a_b);
 		ca = elm_2_push->push_cost_a;
 		cb = elm_2_push->push_cost_b;
 		
-		
-		if (ca * cb > 0)
-			while (max(ABS_VAL(ca), ABS_VAL(cb)) != 0)
+		while (ca || cb)
+		{
+			if (ca * cb > 0)
 			{
-				(ca > 0 && cb > 0) && (rr(a_b), ca--, cb--);
-				(ca < 0 && cb < 0) && (rrr(a_b), ca++, cb++);
-				(ca > 0 && cb == 0) && (ra(a_b), ca--);
-				(cb > 0 && ca == 0) && (rb(a_b), cb--);
-				(ca < 0 && cb == 0) && (rra(a_b), ca++);
-				(cb < 0 && ca == 0) && (rrb(a_b), cb++);
+				(ca > 0) && (rr(a_b), ca--, cb--);
+				(ca < 0) && (rrr(a_b), ca++, cb++);
 			}
-		else
-			while (ABS_VAL(ca) + ABS_VAL(cb) > 0)
+			else if (ca * cb <= 0)
 			{
 				(ca > 0) && (ra(a_b), ca--);
-				(cb > 0) && (rb(a_b), cb--);
 				(ca < 0) && (rra(a_b), ca++);
+				
+				(cb > 0) && (rb(a_b), cb--);
 				(cb < 0) && (rrb(a_b), cb++);
 			}
+		}
+		
 		pa(a_b);
 		b = *a_b[1]; // after any instuction
 	}
 }
 
 
+
+
+
+
+		// if (ca * cb > 0)
+		// 	while (max(ABS_VAL(ca), ABS_VAL(cb)) != 0)
+		// 	{
+		// 		(ca > 0 && cb > 0) && (rr(a_b), ca--, cb--);
+		// 		(ca < 0 && cb < 0) && (rrr(a_b), ca++, cb++);
+		// 		(ca > 0 && cb == 0) && (ra(a_b), ca--);
+		// 		(cb > 0 && ca == 0) && (rb(a_b), cb--);
+		// 		(ca < 0 && cb == 0) && (rra(a_b), ca++);
+		// 		(cb < 0 && ca == 0) && (rrb(a_b), cb++);
+		// 	}
+		// else
+		// 	while (ABS_VAL(ca) + ABS_VAL(cb) > 0)
+		// 	{
+		// 		(ca > 0) && (ra(a_b), ca--);
+		// 		(cb > 0) && (rb(a_b), cb--);
+		// 		(ca < 0) && (rra(a_b), ca++);
+		// 		(cb < 0) && (rrb(a_b), cb++);
+		// 	}
