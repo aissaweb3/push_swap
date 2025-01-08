@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:23:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:45:32 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:25:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	rrr(t_mystack **s[2])
 {
 	rra_(s);
 	rrb_(s);
-	write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:16:09 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/07 18:28:20 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:49:37 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,7 @@ int	sum_instr(t_mystack *b)
 	c2 = b->push_cost_b;
 	if (c1 * c2 > 0)
 		return (max(c1, c2)); // ra + rb = rr
-	else if (c1 * c2 < 0)
+	else if (c1 * c2 <= 0)
 		return (ABS_VAL(c1) + ABS_VAL(c2));
 	return (0);
 }
@@ -217,14 +217,14 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 		
 		
 		if (ca * cb > 0)
-			while (ABS_VAL(max(ca, cb)) > 0)
+			while (max(ABS_VAL(ca), ABS_VAL(cb)) != 0)
 			{
 				(ca > 0 && cb > 0) && (rr(a_b), ca--, cb--);
 				(ca < 0 && cb < 0) && (rrr(a_b), ca++, cb++);
-				(ca > 0) && (ra(a_b), ca--);
-				(cb > 0) && (rb(a_b), cb--);
-				(ca < 0) && (rra(a_b), ca++);
-				(cb < 0) && (rrb(a_b), cb++);
+				(ca > 0 && cb == 0) && (ra(a_b), ca--);
+				(cb > 0 && ca == 0) && (rb(a_b), cb--);
+				(ca < 0 && cb == 0) && (rra(a_b), ca++);
+				(cb < 0 && ca == 0) && (rrb(a_b), cb++);
 			}
 		else
 			while (ABS_VAL(ca) + ABS_VAL(cb) > 0)
