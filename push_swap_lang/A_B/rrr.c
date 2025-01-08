@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 16:20:55 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:45:02 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/03 11:23:30 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/08 10:25:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sa(t_mystack **s[2])
+void	rrr(t_mystack **s[2])
 {
-	sa_(s);
-	write(1, "sa\n", 3);
-}
-
-void	sa_(t_mystack **s[2])
-{
-	t_mystack **a;
-
-	a = s[0];
-	general_swap(a);
+	rra_(s);
+	rrb_(s);
+	write(1, "rrr\n", 4);
 }

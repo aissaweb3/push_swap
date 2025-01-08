@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 16:20:55 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:45:02 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/06 16:18:10 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
-void	sa(t_mystack **s[2])
+t_mystack	*init_stack(int ac, char **av)
 {
-	sa_(s);
-	write(1, "sa\n", 3);
+	int 		i;
+	t_mystack	*head;
+	t_mystack	*tail;
+
+	i = 1; // ignore the program name
+	head = NULL;
+	while (i < ac)
+	{
+		tail = append_stack(&head, tail, atoi(av[i++]));
+		if (tail == NULL)
+			return (free_stack(&head), NULL);
+	}
+	return (head);
 }
 
-void	sa_(t_mystack **s[2])
-{
-	t_mystack **a;
-
-	a = s[0];
-	general_swap(a);
-}

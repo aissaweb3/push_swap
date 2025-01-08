@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 16:20:55 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/03 15:45:02 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/06 16:18:35 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/07 10:04:55 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
-void	sa(t_mystack **s[2])
+char	validate_args(int ac, char **av)
 {
-	sa_(s);
-	write(1, "sa\n", 3);
-}
-
-void	sa_(t_mystack **s[2])
-{
-	t_mystack **a;
-
-	a = s[0];
-	general_swap(a);
+	// validate input data
+	// integers 
+	// no dup
+	return (NO_ERR);
+	return (ERR);
+	av[ac - 1] = 0;
 }
