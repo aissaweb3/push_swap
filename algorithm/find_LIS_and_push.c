@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:05 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 17:54:37 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:54:47 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	push_non_LIS(t_parsed_data *my_data, t_mystack **a_b[2])
 	t_mystack	*curr;
 
 	curr = *a_b[0];
-		i = -1;
 	while (curr)
 	{
 		non_LIS = 1;
