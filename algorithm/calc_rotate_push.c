@@ -6,16 +6,11 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 11:32:03 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/08 11:33:05 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithm.h"
-
-static int	abs_val(int x)
-{
-	return ((x < 0) && (-x) || x);
-}
 
 static int	prev_idx_in_A(int idx, t_mystack *a)
 {
@@ -51,7 +46,7 @@ static int	sum_instr(t_mystack *b)
 	if (c1 * c2 > 0)
 		return (max(c1, c2)); // ra + rb = rr
 	else if (c1 * c2 <= 0)
-		return (abs_val(c1) + abs_val(c2));
+		return (ABS_VAL(c1) + ABS_VAL(c2));
 	return (0);
 }
 
@@ -129,7 +124,7 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 		
 		
 		if (ca * cb > 0)
-			while (max(abs_val(ca), abs_val(cb)) != 0)
+			while (max(ABS_VAL(ca), ABS_VAL(cb)) != 0)
 			{
 				(ca > 0 && cb > 0) && (rr(a_b), ca--, cb--);
 				(ca < 0 && cb < 0) && (rrr(a_b), ca++, cb++);
@@ -139,7 +134,7 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 				(cb < 0 && ca == 0) && (rrb(a_b), cb++);
 			}
 		else
-			while (abs_val(ca) + abs_val(cb) > 0)
+			while (ABS_VAL(ca) + ABS_VAL(cb) > 0)
 			{
 				(ca > 0) && (ra(a_b), ca--);
 				(cb > 0) && (rb(a_b), cb--);
