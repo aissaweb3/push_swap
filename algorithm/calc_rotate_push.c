@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/08 13:57:37 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:25:40 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,24 @@ static int	prev_idx_in_A(int idx, t_mystack *a)
 
 static int	max(int a, int b)
 {
-	return (a > b && a || b);
+	if (a > b)
+		return (a);
+	return (b);
 }
-
+#include <stdio.h>
 static int	sum_instr(t_mystack *b)
 {
-	int c1;
-	int c2;
+	int	ca;
+	int	cb;
 	int	result;
 	
-	c1 = b->push_cost_a;
-	c2 = b->push_cost_b;
-	if (c1 * c2 > 0)
-		return (max(c1, c2)); // ra + rb = rr
-	else if (c1 * c2 <= 0)
-		return (ABS_VAL(c1) + ABS_VAL(c2));
-	return (0);
+	ca = b->push_cost_a;
+	cb = b->push_cost_b;
+	if (ca * cb > 0)
+		result = max(ABS_VAL(ca), ABS_VAL(cb)); // ra + rb = rr
+	else if (ca * cb <= 0)
+		result = ABS_VAL(ca) + ABS_VAL(cb);
+	return (result);
 }
 
 void	calc_push_cost_b(t_mystack **a_b[2])
@@ -118,7 +120,7 @@ void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
 		// 		PUSH
 	
 		calc_push_cost_b(a_b); // am proud of the calculation hhhh
-		elm_2_push = b;//best_elm_in_b(a_b);
+		elm_2_push = best_elm_in_b(a_b);
 		ca = elm_2_push->push_cost_a;
 		cb = elm_2_push->push_cost_b;
 		
