@@ -1,0 +1,15 @@
+
+
+
+
+algo				gamma		@done
+parsing				tao			@done
+	|__validation
+checker				Tn/Pn		...
+
+
+
+
+// 2 1 0 -----> 2 or 3
+// 2 1 0 3 4 -----> less than 12
+
