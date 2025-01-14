@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:51:18 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/11 17:59:34 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:47:58 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	sum_instr(t_mystack *b)
 
 	ca = b->push_cost_a;
 	cb = b->push_cost_b;
+	result = 0;
 	if (ca * cb > 0)
 		result = max(abs_val(ca), abs_val(cb));
 	else if (ca * cb <= 0)

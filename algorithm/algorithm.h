@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 09:34:05 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:44:18 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	mov_to_top(t_parsed_data *my_data, t_mystack **a_b[2],
 void	find_lis_and_push(t_parsed_data *my_data, t_mystack **a_b[2]);
 void	find_lis(t_parsed_data *my_data, t_mystack **a_b[2],
 			int *lis, int *lis_len);
-void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2]);
+void	calc_rotate_push(t_mystack **a_b[2]);
 
 // utils
 

@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 09:35:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 10:27:01 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:48:28 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	stack_sorted(t_parsed_data *my_data, t_mystack **a_b[2])
 {
 	find_lis(my_data, a_b, my_data->lis, &my_data->lis_len);
 	if (
-			my_data->lis_len == my_data->argc
-			&& (*a_b[0])->len == my_data->argc
-			&& *a_b[1] == NULL
-		)
-		return OK;
-	return KO;
+		my_data->lis_len == my_data->argc
+		&& (*a_b[0])->len == my_data->argc
+		&& *a_b[1] == NULL
+	)
+		return (OK);
+	return (KO);
 }

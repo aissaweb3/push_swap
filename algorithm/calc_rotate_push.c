@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/13 11:13:05 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:44:21 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	cheap_rotate_stacks(t_mystack **a_b[2], int ca, int cb)
 	}
 }
 
-void	calc_rotate_push(t_parsed_data *my_data, t_mystack **a_b[2])
+void	calc_rotate_push(t_mystack **a_b[2])
 {
 	int			ca;
 	int			cb;

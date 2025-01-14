@@ -51,8 +51,8 @@ BNS_OBJ_FILES = $(BNS_SRC_FILES:.c=.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
 CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 
 # Rules
 all: $(NAME)
