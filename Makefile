@@ -43,7 +43,7 @@ BNS_SRC_FILES = \
 	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/check_dup.c \
 	$(BONUS_DIR)/apply_instr_bonus.c $(BONUS_DIR)/stack_sorted_bonus.c $(BONUS_DIR)/read_line_bonus.c \
 	$(GNL)/get_next_line.c $(GNL)/get_next_line_utils.c \
-	checker.c
+	checker_bonus.c
 
 # Object files
 OBJ_FILES = $(SRC_FILES:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 13:45:01 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:15:03 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static void	free_split(char **av, char used_split)
 
 t_mystack	*push_arg(int i, char **av, int used_split, t_mystack **head)
 {
-	t_arg		arg;
-	t_mystack	*tail;
+	static t_mystack	*tail;
+	t_arg				arg;
 
 	arg = validate_arg(av[i]);
 	if (!arg.is_valid)
@@ -35,7 +35,6 @@ t_mystack	*push_arg(int i, char **av, int used_split, t_mystack **head)
 	check_dup(*head, &arg);
 	if (arg.is_uniq == NOT_UNIQ)
 		return (free_split(av, used_split), free_stack(head), NULL);
-	tail = NULL;
 	tail = push_elem(head, tail, arg.value);
 	if (tail == NULL)
 		return (free_split(av, used_split), free_stack(head), NULL);

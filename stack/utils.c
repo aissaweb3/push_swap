@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 13:45:55 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:11:52 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ t_mystack	*push_elem(t_mystack **head, t_mystack *tail, int new_data)
 {
 	if (*head == NULL)
 		return (*head = create_stack(new_data));
-	if (tail == NULL)
-		return (*head);
 	tail->next = create_stack(new_data);
 	return (tail->next);
 }
