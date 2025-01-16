@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 13:40:03 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:52:46 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_arg
 	long		value;
 }				t_arg;
 
-void			validate(int ac, char **av);
 t_arg			validate_arg(char *arg);
 void			validation_error(void);
 void			check_dup(t_mystack *head, t_arg *arg);

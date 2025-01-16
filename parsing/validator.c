@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 13:23:51 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/13 10:59:10 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:52:39 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@ void	validation_error(void)
 {
 	write(2, "Error\n", 7);
 	exit(EXIT_FAILURE);
-}
-
-void	validate(int ac, char **av)
-{
-	if (ac == 1)
-		exit(EXIT_FAILURE);
-	if (ac == 2 && av[1][0] == '\0')
-		validation_error();
 }
 
 t_arg	validate_arg(char *arg)
