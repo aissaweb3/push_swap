@@ -3,7 +3,7 @@ NAME = push_swap
 NAME_BNS = checker
 
 # Directories
-BONUS_DIR = checker
+BONUS_DIR = checker_dir
 LIBFT = libft
 GNL = gnl
 PARS = parsing

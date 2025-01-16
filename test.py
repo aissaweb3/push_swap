@@ -38,3 +38,22 @@ def tester(min, max):
 max_tests = 100  # Example limit for 100 tests
 for _ in range(max_tests):
     tester(0, 500)  # You can adjust the range of numbers to test
+
+
+
+# $>./checker 3 2 1 0
+# rra
+# pb
+# sa
+# rra
+# pa
+# OK
+# $>./checker 3 2 1 0
+# sa
+# rra
+# pb
+# KO
+# $>./checker 3 2 one 0
+# Error
+# $>./checker "" 1
+# Erro

@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:22:35 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 13:44:32 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:45:56 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ char	*join_args(int ac, char **words)
 	j = 0;
 	while (j < ac)
 	{
+		if (words[j][0] == '\0')
+		{
+			free(sentence);
+			validation_error();
+		}
 		ft_strcat(sentence, words[j]);
 		if (j < ac - 1)
 			ft_strcat(sentence, " ");
