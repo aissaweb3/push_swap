@@ -4,7 +4,12 @@ import os
 good = []
 bad = []
 
+worst_count = 0
+worst_set = ""
+danger = ""
+
 def tester(min, max):
+    global worst_count, worst_set, danger
     numbers = []
     while len(numbers) < max:  # Ensure we generate the correct number of elements
         i = random.randint(min, max)  # Adjusted range for numbers
@@ -18,42 +23,34 @@ def tester(min, max):
     result = os.popen(f"./push_swap {p} | ./checker_mac {p}").read().strip()
     
     if result != "OK":
-        print("--------------- Danger! The code failed ---------------")
+        print("--------------- Danger! The code failed ---------------", result)
+        danger = p
         return  # Stop the test if failure occurs
     
     # Count the number of operations
     out = int(os.popen(f"./push_swap {p} | wc -l").read().strip())
     
     # Add the result to either good or bad list based on the number of operations
-    if out < 5501:
+    if out < 5939:
         good.append(out)
     else:
         bad.append(out)
+        if worst_count < out:
+            worst_count = out
+            worst_set = p
     
     # Print the current number of operations and success/failure rate
     success_rate = (len(good) / (len(good) + len(bad))) * 100 if (len(good) + len(bad)) > 0 else 0
     print(f"Operations: {out}, Success Rate: {success_rate:.2f}%", result)
 
 # Run the tests in a loop (with a limited number of iterations for safety)
-max_tests = 100  # Example limit for 100 tests
+max_tests = 1000  # Example limit for 100 tests
 for _ in range(max_tests):
     tester(0, 500)  # You can adjust the range of numbers to test
 
 
 
-# $>./checker 3 2 1 0
-# rra
-# pb
-# sa
-# rra
-# pa
-# OK
-# $>./checker 3 2 1 0
-# sa
-# rra
-# pb
-# KO
-# $>./checker 3 2 one 0
-# Error
-# $>./checker "" 1
-# Erro
+
+print("result : worst_set: ", worst_set, "worst_count:", worst_count)
+
+print("KO, ", danger)
