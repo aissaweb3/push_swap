@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 14:44:17 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:50:46 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,16 @@ t_mystack	*push_arg(int i, char **av, t_mystack **head)
 
 t_mystack	*init_stack(int ac, char **av)
 {
+	char		*joined;
 	char		**args;
 	int			i;
 	t_mystack	*head;
 	t_mystack	*tail;
 
 	1 && (av++, ac--, i = 0, head = NULL);
-	args = ft_split(join_args(ac, av), ' '); // to be free
+	joined = join_args(ac, av);
+	args = ft_split(joined, ' ');
+	free(joined);
 	if (args == NULL)
 		return (NULL);
 	ac = 0;
