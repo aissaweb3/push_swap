@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/13 11:07:57 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:40:03 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			check_dup(t_mystack *head, t_arg *arg);
 
 t_parsed_data	parse_data(int ac, char **av);
 t_mystack		*init_stack(int ac, char **av);
+char			*join_args(int ac, char **words);
 void			index_stack_a(t_mystack *a);
 
 # define UNIQ 15

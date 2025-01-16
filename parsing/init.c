@@ -6,67 +6,61 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 13:15:03 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:35:36 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-static void	free_split(char **av, char used_split)
+static void	free_split(char **av)
 {
 	int	i;
 
-	if (!used_split)
-		return ;
 	i = 0;
 	while (av[i])
 		free(av[i++]);
 	free(av);
 }
 
-t_mystack	*push_arg(int i, char **av, int used_split, t_mystack **head)
+t_mystack	*push_arg(int i, char **av, t_mystack **head)
 {
 	static t_mystack	*tail;
 	t_arg				arg;
 
 	arg = validate_arg(av[i]);
 	if (!arg.is_valid)
-		return (free_split(av, used_split), free_stack(head), NULL);
+		return (free_split(av), free_stack(head), NULL);
 	check_dup(*head, &arg);
 	if (arg.is_uniq == NOT_UNIQ)
-		return (free_split(av, used_split), free_stack(head), NULL);
+		return (free_split(av), free_stack(head), NULL);
 	tail = push_elem(head, tail, arg.value);
 	if (tail == NULL)
-		return (free_split(av, used_split), free_stack(head), NULL);
+		return (free_split(av), free_stack(head), NULL);
 	return (*head);
 }
 
 t_mystack	*init_stack(int ac, char **av)
 {
+	char		**args;
 	int			i;
 	t_mystack	*head;
 	t_mystack	*tail;
-	char		used_split;
 
-	1 && (av++, ac--, i = 0, head = NULL, used_split = 0);
-	if (ac == 1)
-	{
-		av = ft_split(av[0], ' ');
-		if (av == NULL)
-			return (NULL);
-		used_split = 1;
-		ac = 0;
-		while (av[ac])
-			ac++;
-	}
+	1 && (av++, ac--, i = 0, head = NULL);
+	args = ft_split(join_args(ac, av), ' ');
+	if (args == NULL)
+		return (NULL);
+	ac = 0;
+	while (args[ac])
+		ac++;
 	while (i < ac)
 	{
-		tail = push_arg(i, av, used_split, &head);
+		tail = push_arg(i, args, &head);
 		if (tail == NULL)
 			return (NULL);
 		i++;
 	}
-	free_split(av, used_split);
+	free_split(args);
 	return (head);
 }
 
