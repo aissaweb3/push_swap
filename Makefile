@@ -1,6 +1,6 @@
 # Executable
 NAME = push_swap
-NAME_BNS = checker_bonus
+NAME_BNS = checker
 
 # Directories
 BONUS_DIR = checker
