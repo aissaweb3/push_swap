@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 13:11:52 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/17 13:35:58 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ t_mystack	*create_stack(int data)
 	new_stack->index = NOT_SET;
 	new_stack->data = data;
 	new_stack->len = 0;
-	new_stack->push_cost_a = 0;
-	new_stack->push_cost_a = 0;
+	new_stack->ca = 0;
+	new_stack->ca = 0;
 	return (new_stack);
 }
 
@@ -54,6 +54,8 @@ void	free_stack(t_mystack **head)
 	while (curr)
 	{
 		next = curr->next;
+		//if (next)
+			//printf("[%d]", next->index - curr->index);
 		free(curr);
 		curr = next;
 	}

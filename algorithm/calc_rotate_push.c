@@ -6,13 +6,13 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 13:44:21 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/17 13:08:27 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithm.h"
 
-void	calc_push_cost_b(t_mystack **a_b[2])
+void	calc_cost(t_mystack **a_b[2])
 {
 	t_mystack	*a;
 	t_mystack	*b;
@@ -27,12 +27,12 @@ void	calc_push_cost_b(t_mystack **a_b[2])
 	{
 		pos = b->position - 1;
 		is_up = pos <= (b->len + 1) / 2;
-		b->push_cost_b = pos - b->len;
-		is_up == 1 && (b->push_cost_b = pos);
+		b->cb = pos - b->len;
+		is_up == 1 && (b->cb = pos);
 		pos = prev_idx_in_a(b->index, a);
 		is_up = pos < (a->len + 1) / 2;
-		b->push_cost_a = pos - a->len;
-		is_up == 1 && (b->push_cost_a = pos);
+		b->ca = pos - a->len;
+		is_up == 1 && (b->ca = pos);
 		b = b->next;
 	}
 }
@@ -82,10 +82,10 @@ void	calc_rotate_push(t_mystack **a_b[2])
 	b = *a_b[1];
 	while (b != NULL)
 	{
-		calc_push_cost_b(a_b);
+		calc_cost(a_b);
 		elm_2_push = best_elm_in_b(a_b);
-		ca = elm_2_push->push_cost_a;
-		cb = elm_2_push->push_cost_b;
+		ca = elm_2_push->ca;
+		cb = elm_2_push->cb;
 		cheap_rotate_stacks(a_b, ca, cb);
 		pa(a_b);
 		b = *a_b[1];

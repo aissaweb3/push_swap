@@ -44,8 +44,8 @@ def tester(min, max):
     print(f"Operations: {out}, Success Rate: {success_rate:.2f}%", result)
 
 # Run the tests in a loop (with a limited number of iterations for safety)
-max_tests = 100  # Example limit for 100 tests
-for _ in range(max_tests):
+max_tests = 1000  # Example limit for 100 tests
+for i in range(max_tests):
     tester(0, 500)  # You can adjust the range of numbers to test
 
 

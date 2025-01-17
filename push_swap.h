@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/16 14:33:46 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/17 13:30:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <stdio.h> /// only for test
 # include <unistd.h>
 # include "parsed_data.h"
 # include "stack/stack.h"
