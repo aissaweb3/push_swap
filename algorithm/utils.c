@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:51:18 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/17 13:04:35 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:01:12 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,22 @@ int	sum_instr(t_mystack *b)
 	else if (ca * cb <= 0)
 		result = abs_val(ca) + abs_val(cb);
 	return (result);
+}
+
+int	mov_min2top_silent(t_mystack **a_b[2])
+{
+	t_mystack	*a;
+	int			count;
+
+	a = *a_b[0];
+	count = 0;
+	while (a->index != 0)
+		1 && (rra_(a_b), count++, a = *a_b[0]);
+	return (count);
+}
+
+void	restore_stack(t_mystack **a_b[2], int count)
+{
+	while (count)
+		1 && (ra_(a_b), count--);
 }

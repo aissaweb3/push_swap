@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:09:02 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/14 13:44:18 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:01:52 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int		prev_idx_in_a(int idx, t_mystack *a);
 int		max(int a, int b);
 int		abs_val(int x);
 int		sum_instr(t_mystack *b);
+int		mov_min2top_silent(t_mystack **a_b[2]);
+void	restore_stack(t_mystack **a_b[2], int count);
 
 #endif
