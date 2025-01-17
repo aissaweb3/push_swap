@@ -34,7 +34,7 @@ SRC_FILES = \
 # Bonus Source files
 BNS_SRC_FILES = \
 	$(LIBFT_SRC) \
-	$(ALGO_DIR)/find_LIS_and_push.c $(ALGO_DIR)/mov_to_top.c \
+	$(ALGO_DIR)/find_LIS_and_push.c $(ALGO_DIR)/mov_to_top.c $(ALGO_DIR)/utils.c \
 	$(STACK_DIR)/utils.c \
 	$(LANG_DIR)/general.c \
 	$(A_DIR)/pa.c $(A_DIR)/ra-rra.c $(A_DIR)/sa.c \

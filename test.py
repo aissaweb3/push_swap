@@ -31,7 +31,7 @@ def tester(min, max):
     out = int(os.popen(f"./push_swap {p} | wc -l").read().strip())
     
     # Add the result to either good or bad list based on the number of operations
-    if out < 5500:
+    if out < 5501:
         good.append(out)
     else:
         bad.append(out)
