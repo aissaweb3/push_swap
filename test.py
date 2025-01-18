@@ -25,13 +25,20 @@ def tester(min, max):
     if result != "OK":
         print("--------------- Danger! The code failed ---------------", result)
         danger = p
-        return  # Stop the test if failure occurs
+        return
+
+    result1 = os.popen(f"./push_swap {p} | ./checker_mac {p}").read().strip()
+    
+    if result1 != "OK":
+        print("--------------- Danger! The code failed ---------------", result1)
+        danger = p
+        return
     
     # Count the number of operations
     out = int(os.popen(f"./push_swap {p} | wc -l").read().strip())
     
     # Add the result to either good or bad list based on the number of operations
-    if out < 5500:
+    if out < 4:
         good.append(out)
     else:
         bad.append(out)
@@ -41,12 +48,12 @@ def tester(min, max):
     
     # Print the current number of operations and success/failure rate
     success_rate = (len(good) / (len(good) + len(bad))) * 100 if (len(good) + len(bad)) > 0 else 0
-    print(f"Operations: {out}, Success Rate: {success_rate:.2f}%", result)
+    print(f"Operations: {out}, Success Rate: {success_rate:.2f}%", result, result1)
 
 # Run the tests in a loop (with a limited number of iterations for safety)
 max_tests = 1000  # Example limit for 100 tests
 for i in range(max_tests):
-    tester(0, 500)  # You can adjust the range of numbers to test
+    tester(0, 3)  # You can adjust the range of numbers to test
 
 
 
