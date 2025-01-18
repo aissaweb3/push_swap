@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 15:28:58 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:44:47 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,6 @@ static void	cheap_rotate_stacks(t_mystack **a_b[2], int ca, int cb)
 
 void	calc_rotate_push(t_mystack **a_b[2])
 {
-	int			ca;
-	int			cb;
 	t_mystack	*elm_2_push;
 	t_mystack	*b;
 
@@ -84,9 +82,7 @@ void	calc_rotate_push(t_mystack **a_b[2])
 	{
 		calc_cost(a_b);
 		elm_2_push = best_elm_in_b(a_b);
-		ca = elm_2_push->ca;
-		cb = elm_2_push->cb;
-		cheap_rotate_stacks(a_b, ca, cb);
+		cheap_rotate_stacks(a_b, elm_2_push->ca, elm_2_push->cb);
 		pa(a_b);
 		b = *a_b[1];
 	}
