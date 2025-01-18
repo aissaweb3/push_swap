@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:52:11 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 13:45:40 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:29:25 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	mov_to_top(t_mystack **a_b[2],
 		curr = curr->next;
 	}
 	set_positions(*a_b[0]);
-	is_up = (node->position <= node->len / 2);
+	is_up = (node->position <= (node->len / 2 + (node->len % 2)));
 	head = *a_b[0];
 	while (head && is_to_move(head, index, data) == 0)
 	{

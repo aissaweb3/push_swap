@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:30 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/17 13:08:27 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:28:58 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	calc_cost(t_mystack **a_b[2])
 	while (b)
 	{
 		pos = b->position - 1;
-		is_up = pos <= (b->len + 1) / 2;
+		is_up = pos <= (b->len + (b->len % 2)) / 2;
 		b->cb = pos - b->len;
 		is_up == 1 && (b->cb = pos);
 		pos = prev_idx_in_a(b->index, a);
-		is_up = pos < (a->len + 1) / 2;
+		is_up = pos < (a->len + (a->len % 2)) / 2;
 		b->ca = pos - a->len;
 		is_up == 1 && (b->ca = pos);
 		b = b->next;

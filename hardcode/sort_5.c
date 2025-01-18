@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_algo.c                                          :+:      :+:    :+:   */
+/*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 19:16:09 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 15:13:08 by ioulkhir         ###   ########.fr       */
+/*   Created: 2025/01/18 13:43:22 by ioulkhir          #+#    #+#             */
+/*   Updated: 2025/01/18 15:24:19 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "algorithm.h"
+#include "hardcode.h"
 
-void	my_algo(t_parsed_data *my_data, t_mystack **a_b[2])
+static void	reset_idx(t_mystack *a)
 {
-	if (my_data->argc == 3)
+	while (a)
 	{
-		sort_3(a_b);
-		return ;
+		a->index = NOT_SET;
+		a = a->next;
 	}
-	if (my_data->argc == 5)
-	{
-		sort_5(a_b);
-		return ;
-	}
-	// my general algo
-	find_lis_and_push(my_data, a_b);
-	calc_rotate_push(a_b);
+}
+
+void	sort_5(t_mystack **a_b[2])
+{
 	mov_to_top(a_b, 0, 0);
+	pb(a_b);
+	mov_to_top(a_b, 1, 0);
+	pb(a_b);
+	reset_idx(*a_b[0]);
+	index_stack_a(*a_b[0]);
+	sort_3(a_b);
+	pa(a_b);
+	pa(a_b);
 }

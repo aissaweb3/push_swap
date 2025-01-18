@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:42:45 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 13:45:01 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:13:16 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include "../stack/stack.h"
 
 void	sort_3(t_mystack **a_b[2]);
+void	sort_5(t_mystack **a_b[2]);
 
 #endif

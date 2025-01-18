@@ -30,7 +30,7 @@ SRC_FILES = \
 	$(B_DIR)/pb.c $(B_DIR)/rb-rrb.c $(B_DIR)/sb.c \
 	$(A_B_DIR)/rr.c $(A_B_DIR)/rrr.c $(A_B_DIR)/ss.c \
 	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/check_dup.c $(PARS)/utils.c \
-	$(HARDCODE)/sort_3.c \
+	$(HARDCODE)/sort_3.c $(HARDCODE)/sort_5.c \
 	push_swap.c
 
 # Bonus Source files
