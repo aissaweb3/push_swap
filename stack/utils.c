@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:34:47 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 15:15:09 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 20:53:32 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	free_stack(t_mystack **head)
 	while (curr)
 	{
 		next = curr->next;
-		//if (next)
-			//printf("[%d]", next->index - curr->index);
 		free(curr);
 		curr = next;
 	}

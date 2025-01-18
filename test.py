@@ -38,7 +38,7 @@ def tester(min, max):
     out = int(os.popen(f"./push_swap {p} | wc -l").read().strip())
     
     # Add the result to either good or bad list based on the number of operations
-    if out < 4:
+    if out <= 700:
         good.append(out)
     else:
         bad.append(out)
@@ -51,9 +51,9 @@ def tester(min, max):
     print(f"Operations: {out}, Success Rate: {success_rate:.2f}%", result, result1)
 
 # Run the tests in a loop (with a limited number of iterations for safety)
-max_tests = 1000  # Example limit for 100 tests
+max_tests = 100  # Example limit for 100 tests
 for i in range(max_tests):
-    tester(0, 3)  # You can adjust the range of numbers to test
+    tester(0, 100)  # You can adjust the range of numbers to test
 
 
 

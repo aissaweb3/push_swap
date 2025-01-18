@@ -29,7 +29,7 @@ SRC_FILES = \
 	$(A_DIR)/pa.c $(A_DIR)/ra-rra.c $(A_DIR)/sa.c \
 	$(B_DIR)/pb.c $(B_DIR)/rb-rrb.c $(B_DIR)/sb.c \
 	$(A_B_DIR)/rr.c $(A_B_DIR)/rrr.c $(A_B_DIR)/ss.c \
-	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/check_dup.c $(PARS)/utils.c \
+	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/utils.c \
 	$(HARDCODE)/sort_3.c $(HARDCODE)/sort_5.c \
 	push_swap.c
 
@@ -42,7 +42,7 @@ BNS_SRC_FILES = \
 	$(A_DIR)/pa.c $(A_DIR)/ra-rra.c $(A_DIR)/sa.c \
 	$(B_DIR)/pb.c $(B_DIR)/rb-rrb.c $(B_DIR)/sb.c \
 	$(A_B_DIR)/rr.c $(A_B_DIR)/rrr.c $(A_B_DIR)/ss.c \
-	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/check_dup.c $(PARS)/utils.c \
+	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/utils.c \
 	$(BONUS_DIR)/apply_instr_bonus.c $(BONUS_DIR)/stack_sorted_bonus.c $(BONUS_DIR)/read_line_bonus.c \
 	$(GNL)/get_next_line.c $(GNL)/get_next_line_utils.c \
 	checker_bonus.c

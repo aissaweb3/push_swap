@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:17:43 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/17 16:22:57 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 20:52:49 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ t_mystack	*push_arg(int i, char **av, t_mystack **head)
 	arg = validate_arg(av[i]);
 	if (!arg.is_valid)
 		return (free_split(av), free_stack(head), NULL);
-	// check_dup(*head, &arg);
 	if (arg.is_uniq == NOT_UNIQ)
 		return (free_split(av), free_stack(head), NULL);
 	tail = push_elem(head, tail, arg.value);
 	if (tail == NULL)
 		return (free_split(av), free_stack(head), NULL);
-	return (*head);
+	return (tail);
 }
 
 t_mystack	*init_stack(int ac, char **av)
