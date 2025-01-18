@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:05 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/18 13:18:20 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 13:46:21 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	push_non_lis(t_parsed_data *my_data, t_mystack **a_b[2])
 		}
 		if (non_lis)
 		{
-			mov_to_top(my_data, a_b, INVALID_IDX, curr->data);
+			mov_to_top(a_b, INVALID_IDX, curr->data);
 			pb(a_b);
 			curr = *a_b[0];
 		}

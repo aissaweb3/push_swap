@@ -5,6 +5,7 @@ NAME_BNS = checker
 # Directories
 BONUS_DIR = checker_dir
 LIBFT = libft
+HARDCODE = hardcode
 GNL = gnl
 PARS = parsing
 ALGO_DIR = algorithm
@@ -13,7 +14,7 @@ LANG_DIR = push_swap_lang
 A_DIR = $(LANG_DIR)/A
 A_B_DIR = $(LANG_DIR)/A_B
 B_DIR = $(LANG_DIR)/B
-INC = $(ALGO_DIR)/algorithm.h $(STACK_DIR)/stack.h $(STACK_DIR)/struct.h push_swap.h parsed_data.h $(LANG_DIR)/language.h $(LIBFT)/libft.h $(PARS)/parsing.h
+INC = $(ALGO_DIR)/algorithm.h $(STACK_DIR)/stack.h $(STACK_DIR)/struct.h push_swap.h parsed_data.h $(LANG_DIR)/language.h $(LIBFT)/libft.h $(PARS)/parsing.h $(HARDCODE)/hardcode.h
 LIBFT_SRC = $(LIBFT)/ft_atoi.c $(LIBFT)/ft_isalpha.c $(LIBFT)/ft_itoa.c $(LIBFT)/ft_memmove.c $(LIBFT)/ft_putnbr_fd.c $(LIBFT)/ft_strdup.c $(LIBFT)/ft_strlcpy.c    $(LIBFT)/ft_strnstr.c    $(LIBFT)/ft_tolower.c \
 			$(LIBFT)/ft_bzero.c $(LIBFT)/ft_isascii.c $(LIBFT)/ft_memchr.c $(LIBFT)/ft_memset.c $(LIBFT)/ft_putstr_fd.c $(LIBFT)/ft_striteri.c $(LIBFT)/ft_strlen.c     $(LIBFT)/ft_strrchr.c    $(LIBFT)/ft_toupper.c \
 			$(LIBFT)/ft_calloc.c $(LIBFT)/ft_isdigit.c $(LIBFT)/ft_memcmp.c $(LIBFT)/ft_putchar_fd.c $(LIBFT)/ft_split.c $(LIBFT)/ft_strjoin.c $(LIBFT)/ft_strmapi.c    $(LIBFT)/ft_strtrim.c \
@@ -29,6 +30,7 @@ SRC_FILES = \
 	$(B_DIR)/pb.c $(B_DIR)/rb-rrb.c $(B_DIR)/sb.c \
 	$(A_B_DIR)/rr.c $(A_B_DIR)/rrr.c $(A_B_DIR)/ss.c \
 	$(PARS)/init.c $(PARS)/parser.c $(PARS)/validator.c $(PARS)/check_dup.c $(PARS)/utils.c \
+	$(HARDCODE)/sort_3.c \
 	push_swap.c
 
 # Bonus Source files

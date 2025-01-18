@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 16:25:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/17 13:30:31 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 13:56:09 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "algorithm/algorithm.h"
 # include "parsing/parsing.h"
 # include "checker_dir/checker_bonus.h"
+# include "hardcode/hardcode.h"
 
 # define NOT_SET -314
 # define NO_ERR 0
