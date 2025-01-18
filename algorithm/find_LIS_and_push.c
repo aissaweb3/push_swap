@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:53:05 by ioulkhir          #+#    #+#             */
-/*   Updated: 2025/01/17 14:03:15 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2025/01/18 13:18:20 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	find_lis_and_push(t_parsed_data *my_data, t_mystack **a_b[2])
 
 	count = mov_min2top_silent(a_b);
 	find_lis(my_data, a_b, my_data->lis, &my_data->lis_len);
+	restore_stack(a_b, count);
 	if (my_data->lis_len == my_data->argc)
 		return ;
-	restore_stack(a_b, count);
 	push_non_lis(my_data, a_b);
 }
